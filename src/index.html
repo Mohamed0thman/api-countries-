@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,600,800" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>flags</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__box">
+                <div class="header__left ">
+                    <h1 class="header__heading-lift">Where in the world?</h1>
+                </div>
+                <div class="header__right">
+                    <i class="far fa-moon moon d-inline"></i>
+                    <h4 class="header__heading-right d-inline">Dark Mode</h4>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="main">
+      
+            <form class="form" >
+                <div class="container">
+                    <div class="row form__box ">
+                        <div class="form__search col-md-4 col-lg-6" >
+                                <input type="search" class="search__field" placeholder="search for a country...">
+                                <i class="fa fa-search search-font"> </i>
+                        </div>
+                        <div class="select col-md-4 col-lg-3">
+                            <div class="select-box ">
+
+                                <div class="option-container ">
+                                    <div class="option">
+                                        <input type="radio" class="radio" id="africa" name="option">
+                                        <label for="africa">africa</label>
+                                    </div>
+                                    <div class="option">
+                                        <input type="radio" class="radio" id="americas" name="option">
+                                            <label for="americas">americas</label>
+                                        </div>
+                                        <div class="option">
+                                        <input type="radio" class="radio" id="asia" name="option">
+                                            <label for="asia">asia</label>
+                                        </div>
+                                        <div class="option">
+                                        <input type="radio" class="radio" id="europe" name="option">
+                                            <label for="europe">europe</label>
+                                        </div>
+                                        <div class="option">
+                                        <input type="radio" class="radio" id="oceania" name="option">
+                                            <label for="oceania">oceania</label>
+                                    </div>
+                                </div>
+                                <div class="selected-container">
+                                    <div class="selected">Filte by region</div>
+                                    <i class="fa fa-angle-down "></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                </div> 
+            </form>
+
+            
+            <div class="results ">
+                <div class="container">
+                    <ul class="results__list row">   
+                        <!--
+                        <li class="results__item">
+                            <a class="results__link" href="#popup">
+                                <div class="results__card">
+                                    <figure class="result__fig">
+                                        <img class="card-img-top" src="img/flag-of-germany.jpg" alt="Card image cap">
+                                    <figure>
+                                    <div class="card-body">
+                                        <h3 class="results__name">Germany</h3>
+                                        <p class="results__population"><span>Population:</span> 81,777.900</p>
+                                        <p class="results__region"><span>Region:</span> Europe</p>
+                                        <p class="result__Capital"><span>Capital:</span> Berlin</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="results__item">
+                            <a class="results__link" href="#popup">
+                                <div class="results__card">
+                                    <img class="card-img-top" src="img/flag-of-germany.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h3 class="results__name">Germany</h3>
+                                        <p class="results__population"><span>Population:</span> 81,777.900</p>
+                                        <p class="results__region"><span>Region:</span> Europe</p>
+                                        <p class="result__Capital"><span>Capital:</span> Berlin</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="results__item">
+                            <a class="results__link" href="#popup">
+                                <div class="results__card">
+                                    <img class="card-img-top" src="img/flag-of-germany.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h3 class="results__name">Germany</h3>
+                                        <p class="results__population"><span>Population:</span> 81,777.900</p>
+                                        <p class="results__region"><span>Region:</span> Europe</p>
+                                        <p class="result__Capital"><span>Capital:</span> Berlin</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    
+                        <li class="results__item">
+                            <a class="results__link" href="#popup">
+                                <div class="results__card">
+                                    <img class="card-img-top" src="img/flag-of-germany.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h3 class="results__name">Germany</h3>
+                                        <p class="results__population"><span>Population:</span> 81,777.900</p>
+                                        <p class="results__region"><span>Region:</span> Europe</p>
+                                        <p class="result__Capital"><span>Capital:</span> Berlin</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="results__item">
+                            <a class="results__link" href="#popup">
+                                <div class="results__card">
+                                    <img class="card-img-top" src="img/flag-of-germany.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h3 class="results__name">Germany</h3>
+                                        <p class="results__population"><span>Population:</span> 81,777.900</p>
+                                        <p class="results__region"><span>Region:</span> Europe</p>
+                                        <p class="result__Capital"><span>Capital:</span> Berlin</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="results__item">
+                            <a class="results__link" href="#popup">
+                                <div class="results__card ">
+                                    <img class="card-img-top" src="img/flag-of-germany.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h3 class="results__name">Germany</h3>
+                                        <p class="results__population"><span>Population:</span> 81,777.900</p>
+                                        <p class="results__region"><span>Region:</span> Europe</p>
+                                        <p class="result__Capital"><span>Capital:</span> Berlin</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="results__item">
+                            <a class="results__link" href="#popup">
+                                <div class="results__card">
+                                    <img class="card-img-top" src="img/flag-of-germany.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h3 class="results__name">Germany</h3>
+                                        <p class="results__population"><span>Population:</span> 81,777.900</p>
+                                        <p class="results__region"><span>Region:</span> Europe</p>
+                                        <p class="result__Capital"><span>Capital:</span> Berlin</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li> <li class="results__item">
+                            <a class="results__link" href="#popup">
+                                <div class="results__card">
+                                    <img class="card-img-top" src="img/flag-of-germany.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h3 class="results__name">Germany</h3>
+                                        <p class="results__population"><span>Population:</span> 81,777.900</p>
+                                        <p class="results__region"><span>Region:</span> Europe</p>
+                                        <p class="result__Capital"><span>Capital:</span> Berlin</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        -->
+                    </ul> 
+                    <div class="results__pages d-flex justify-content-around">
+                        <!--                       
+                        <button class="btn btn-inline results__btn--prev">
+                            <i class="fa fa-arrow-alt-circle-left"> </i>
+                            <span>Page 1</span>
+                        </button>
+                        <button class="btn btn-inline results__btn--next">
+                            <span>Page 3</span>
+                            <i class="fa fa-arrow-alt-circle-right"> </i>
+                        </button>
+                        -->
+                    </div>
+
+                </div> 
+                
+                </div> 
+            </div>       
+           
+        <div class="popup" id="popup">
+
+                <div class="popup__content" >
+                    <a class="popup__btn btn" href="#">
+                        <i class="fa fa-arrow-left"></i>
+                        <span>Back</span>
+                    </a>
+                    <div class="popup__box">
+                        <!--
+                        <div class="popup__left ">
+                                                      
+                                <figure class="popup__fig">
+                                    <img src="img/flag-of-germany.jpg" alt="Germany">
+                                </figure>
+                        
+
+                        </div>
+
+                        <div class="popup__right">
+
+                            <div class="popup__text">
+                                
+                                    <h1 class="popup__heading">Belgium</h1>
+                                    <div class="popup__item">
+                                        <ul class="popup__list-right">
+                                            <li class="popup__list popup__native-name"><span>Native Name:</span> Belgie</li>
+                                            <li class="popup__list popup__population"><span>Population:</span> 11,319.511</li>
+                                            <li class="popup__list popup__region"><span>Region:</span> Europe </li>
+                                            <li class="popup__list popup__sub-region"><span>Sub Region:</span> Western Europ</li>
+                                            <li class="popup__list popup__capital"><span>Capital:</span> Brussels</li>
+                                        </ul>
+                                        <ul class="popup__list-left">
+                                            <li class="popup__list popup__top-level"><span>Top Level Domain:</span> be</li>
+                                            <li class="popup__list popup__currencies"><span>Currencies:</span> Euro</li>
+                                            <li class="popup__list popup__Languages"><span>Languages:</span> Dutch,French,Geman</li>
+                                        </ul>
+                                    </div>
+                                
+                            </div>  
+
+                            <div class="popup__borders">
+                                
+                                    <span>Border Countries:</span>
+                                    <div class="popup__links">
+                                        <a class="popup__borders-btn btn">France</a>
+                                        <a class="popup__borders-btn btn">France</a>
+                                        <a class="popup__borders-btn btn">France</a>
+                                    </div>
+                            
+                            </div>
+                        
+                        </div>
+                    
+                    -->        
+                    </div>
+                </div>
+            
+        </div>
+        
+    </div>         
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
