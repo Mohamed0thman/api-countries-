@@ -90,5 +90,7 @@ export const renderResults = (country, page = 1, resPerPage = 8) => {
 
      renderButtom(page, country.length, resPerPage)
      console.log(country.length);
+
+     debugger
      
 }
