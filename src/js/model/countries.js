@@ -9,7 +9,7 @@ export default class Countries {
   async getCountries() {
     const all = await axios.get(`https://restcountries.eu/rest/v2/all`);
     this.data = all.data;
-    console.log(this.data)
+    console.log(this.data);
 
     this.name = this.data.map(country => {
       return country.name.toLowerCase();
@@ -47,13 +47,11 @@ export default class Countries {
         ).innerHTML);
         elements.optionsContainer.classList.remove("active");
 
-        countriesView.renderResults(
-          this.data.filter(country => {
-            countriesView.clearResults();
-            console.log("sss");
-            return country.region.toLowerCase() === option;
-          })
-        );
+        this.data = this.data.filter(country => {
+          countriesView.clearResults();
+          return country.region.toLowerCase() === option;
+        });
+        countriesView.renderResults(this.data);
       });
     });
   }
