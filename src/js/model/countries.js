@@ -9,7 +9,7 @@ export default class Countries {
   async getCountries() {
     const all = await axios.get(`https://restcountries.eu/rest/v2/all`);
     this.data = all.data;
-    console.log(this.data);
+    this.countries = this.data;
 
     this.name = this.data.map(country => {
       return country.name.toLowerCase();
@@ -17,13 +17,14 @@ export default class Countries {
 
     elements.searchForm.addEventListener("keyup", e => {
       const getInput = e.target.value.toLowerCase();
-      countriesView.renderResults(
-        this.data.filter(country => {
-          countriesView.clearResults();
-          return country.name.toLowerCase().includes(getInput);
-        })
-      );
-      countriesView.clearBotton();
+
+      this.countries = this.data.filter(country => {
+        countriesView.clearResults();
+        return country.name.toLowerCase().includes(getInput);
+      });
+      countriesView.renderResults(this.countries);
+
+      // countriesView.clearBotton();
     });
 
     elements.resultsPages.addEventListener("click", e => {
@@ -32,7 +33,7 @@ export default class Countries {
       if (btn) {
         const goToPage = parseInt(btn.dataset.goto, 10);
         countriesView.clearResults();
-        countriesView.renderResults(this.data, goToPage);
+        countriesView.renderResults(this.countries, goToPage);
       }
     });
 
@@ -41,17 +42,18 @@ export default class Countries {
     });
 
     elements.optionList.forEach(e => {
-      e.addEventListener("click", () => {
+      e.addEventListener("click", async () => {
         const option = (elements.selected.innerHTML = e.querySelector(
           "label"
         ).innerHTML);
+
         elements.optionsContainer.classList.remove("active");
 
-        this.data = this.data.filter(country => {
+        this.countries = this.data.filter(country => {
           countriesView.clearResults();
           return country.region.toLowerCase() === option;
         });
-        countriesView.renderResults(this.data);
+        countriesView.renderResults(this.countries);
       });
     });
   }

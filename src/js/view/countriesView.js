@@ -55,6 +55,8 @@ const renderButtom = (page, numResults, resPerPage) => {
   const pages = Math.ceil(numResults / resPerPage);
 
   let button;
+
+  if (numResults <= 8) return;
   if (page === 1 && pages > 1) {
     button = creatButton(page, "next");
   } else if (page < pages) {
@@ -71,7 +73,18 @@ const renderButtom = (page, numResults, resPerPage) => {
 export const renderResults = (country, page = 1, resPerPage = 8) => {
   const start = (page - 1) * resPerPage;
   const end = page * resPerPage;
+  let virtualWidth = "25rem";
 
+  if (country.slice(start, end).length % 3 === 2) {
+    virtualWidth = "50rem";
+  }
+
+  try {
+    elements.resultsList.removeAttribute(`data-25rem`);
+    elements.resultsList.removeAttribute(`data-50rem`);
+  } catch (e) {}
+
+  elements.resultsList.setAttribute(`data-${virtualWidth}`, virtualWidth);
   country.slice(start, end).forEach(renderCountries);
 
   renderButtom(page, country.length, resPerPage);
