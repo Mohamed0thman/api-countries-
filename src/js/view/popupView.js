@@ -2,14 +2,14 @@ import { elements } from './base';
 
 export const clearPopup = () => elements.popupBox.innerHTML = ' ';
 
-const renderBorders = (country) => `
-    <li class="borders-item">
-        <a class="popup__borders-btn btn">${country.borders}</a>  
-    </li>
-`
-
-
-
+const renderBorders = (border) => {
+    return `
+      <li class="borders-item">
+          <a class="popup__borders-btn btn" href="#${border}">${border}</a>  
+      </li>
+  `;
+};
+  
 
 
 
@@ -34,17 +34,15 @@ export const renderPopup = (country) => {
                 </ul>
                 <ul class="popup__list-left">
                     <li class="popup__list popup__top-level"><span>Top Level Domain:</span> ${country.topLevelDomain}</li>
-                    <li class="popup__list popup__currencies"><span>Currencies:</span> ${country.currencies}</li>
-                    <li class="popup__list popup__Languages"><span>Languages:</span> ${country.languages}</li>
+                    <li class="popup__list popup__currencies"><span>Currencies:</span> ${country.currencies.map(currency => currency.code)}</li>
+                    <li class="popup__list popup__Languages"><span>Languages:</span> ${country.languages.map(lang => lang.iso639_1)}</li>
                 </ul>
         </div> 
     </div>     
     <div class="popup__borders">                 
         <span>Border Countries:</span>
-        <ul class="borders.list">
-
-            ${renderBorders(country)} 
-        
+        <ul class="borders-list">
+            ${country.borders.map(border => renderBorders(border)).join("")} 
         </ul>
 
     </div>    

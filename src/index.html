@@ -37,29 +37,30 @@
 
                                 <div class="option-container ">
                                     <div class="option">
-                                        <input type="radio" class="radio" id="africa" name="option">
-                                        <label for="africa">africa</label>
+                                        <input type="radio" class="radio" id="Africa" name="option">
+                                        <label for="Africa">Africa</label>
                                     </div>
                                     <div class="option">
-                                        <input type="radio" class="radio" id="americas" name="option">
-                                            <label for="americas">americas</label>
+                                        <input type="radio" class="radio" id="Americas" name="option">
+                                            <label for="Americas">Americas</label>
                                         </div>
                                         <div class="option">
-                                        <input type="radio" class="radio" id="asia" name="option">
-                                            <label for="asia">asia</label>
+                                        <input type="radio" class="radio" id="Asia" name="option">
+                                            <label for="Asia">Asia</label>
                                         </div>
                                         <div class="option">
-                                        <input type="radio" class="radio" id="europe" name="option">
-                                            <label for="europe">europe</label>
+                                        <input type="radio" class="radio" id="Europe" name="option">
+                                            <label for="Europe">Europe</label>
                                         </div>
                                         <div class="option">
-                                        <input type="radio" class="radio" id="oceania" name="option">
-                                            <label for="oceania">oceania</label>
+                                        <input type="radio" class="radio" id="Oceania" name="option">
+                                            <label for="Oceania">Oceania</label>
                                     </div>
                                 </div>
                                 <div class="selected-container">
-                                    <div class="selected">Filte by region</div>
-                                    <i class="fa fa-angle-down "></i>
+                                    <i class="fas close"></i>
+                                    <div class="selected">Filte By Region</div>
+                                    <i class="fa fa-angle-down arrow"></i>
                                 </div>
                             </div>
                         </div>
@@ -180,6 +181,14 @@
                         </li>
                         -->
                     </ul> 
+                    <div class="results__not-found">
+                        <!--
+                        <div class="not-found__text">
+                            <h2>No results found</h2>
+                            <p>Try different keywords or remove search filters</p>
+                        </div>
+                        -->
+                    </div>
                     <div class="results__pages d-flex justify-content-around">
                         <!--                       
                         <button class="btn btn-inline results__btn--prev">
@@ -240,12 +249,18 @@
 
                             <div class="popup__borders">
                                 
-                                    <span>Border Countries:</span>
-                                    <div class="popup__links">
-                                        <a class="popup__borders-btn btn">France</a>
-                                        <a class="popup__borders-btn btn">France</a>
-                                        <a class="popup__borders-btn btn">France</a>
-                                    </div>
+                                <span>Border Countries:</span>
+                                <ul class="borders-list">
+                                    <li class="borders-item">
+                                        <a class="popup__borders-btn btn">...</a>  
+                                    </li>
+                                    <li class="borders-item">
+                                        <a class="popup__borders-btn btn">...</a>  
+                                    </li>
+                                    <li class="borders-item">
+                                        <a class="popup__borders-btn btn">...</a>  
+                                    </li>
+                                </ul>
                             
                             </div>
                         

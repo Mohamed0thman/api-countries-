@@ -7,6 +7,8 @@ export const clearResults = () => {
     elements.resultsPages.innerHTML = ' '
 };
 
+export const clearNotFound = () => elements.resultsNotFound.innerHTML = ' ';
+
 
 export const clearBotton = () => elements.resultsPages.innerHTML = ' ';
 
@@ -17,7 +19,7 @@ export const renderCountries = (country) => {
     const markup = 
     `
     <li class="results__item">
-        <a class="results__link" href="#${country.name}">
+        <a class="results__link" href="#${country.alpha3Code}">
             <div class="results__card">
                 <figure class="result__fig">
                     <img class="card-img-top" src="${country.flag}" alt="${country.name}">
@@ -35,6 +37,18 @@ export const renderCountries = (country) => {
     `
     elements.resultsList.insertAdjacentHTML('afterbegin', markup)
 }
+
+export const renderNotFound = () => {
+  const  markup = 
+    `
+    <div class="not-found__text">
+        <h2>No results found</h2>
+        <p>Try different keywords or remove search filters</p>
+    </div>    
+    `
+    elements.resultsNotFound.insertAdjacentHTML('afterbegin', markup)
+
+} 
 
 
 

@@ -8,10 +8,12 @@ export const elements = {
      selected: document.querySelector('.selected'),
      optionsContainer: document.querySelector('.option-container'),
      optionList: document.querySelectorAll('.option'),
+     optionClose: document.querySelector('.close'),
      resultsList: document.querySelector('.results__list'),
      resultsPages: document.querySelector('.results__pages'),
      resultsItem: document.querySelectorAll('.results__item'),
      resultsLink: document.querySelectorAll('.results__link'),
+     resultsNotFound: document.querySelector('.results__not-found'),
      btn: document.querySelectorAll('.btn'),
      popupBox: document.querySelector('.popup__box'),
      popup: document.querySelector('.popup')
