@@ -1,11 +1,6 @@
 import Countries from './model/countries'
-import Search from './model/Search'
-import Popup from './model/popup'
-
 import * as countriesView from './view/countriesView'
-import * as SearchView from './view/searchView'
 import * as popupView from './view/popupView'
-
 import { elements } from './view/base';
 
 
@@ -14,32 +9,22 @@ const state = {}
 const controlcountries = async () => {
     countriesView.clearResults();   
     state.countries = new Countries() 
-    console.log(state.contains);
     await state.countries.getCountries()
     countriesView.renderResults(state.countries.data)
-    console.log(state.countries.data);
-    
+
 } 
 controlcountries() 
+
+
 
 
 const controlPopup = async () => {
     const id = window.location.hash.replace('#', '');
     elements.popup.classList.remove('popup-target')
-
     popupView.clearPopup()
-
-    console.log(id);
     if(id) {
         elements.popup.classList.add('popup-target')
-        state.countries = new Countries() 
-        await state.countries.getCountries()
-        console.log(state.countries);
-        const getPopup = state.countries.data.filter((country) => {
-            return country.alpha3Code === id;
-        })
-        console.log(getPopup);
-        popupView.renderPopup(getPopup[0])
+        state.countries.getPopup()
     }
 }
 
@@ -51,13 +36,9 @@ if (window.location.hash.length > 1) {
 
 
 
-
 const controlFilter = async () => {
     countriesView.clearResults();   
-    state.countries = new Countries() 
-    await state.countries.getCountries()
     state.countries.filterResults()
-   
 }
         
 elements.selected.addEventListener('click', () => {
@@ -70,7 +51,6 @@ elements.optionList.forEach(e => {
         elements.optionsContainer.classList.remove('active');
         elements.selected.innerHTML = e.querySelector('label').innerHTML;
         controlFilter()
-
     })
 });     
 
@@ -79,8 +59,6 @@ elements.optionClose.addEventListener('click', () => {
     elements.selected.innerHTML = 'Filte By Region'
     controlcountries() 
 })
-
-
 
 
 const controlSearch = async () => { 
@@ -96,12 +74,12 @@ const controlSearch = async () => {
         } else {
             countriesView.clearNotFound();
             countriesView.clearResults();  
-            state.countries = new Countries(); 
-            await state.countries.getCountries();
             state.countries.searchResults()
         }    
+       
     } 
 }
+
 
 elements.searchForm.addEventListener('keyup', () => {
     controlSearch()

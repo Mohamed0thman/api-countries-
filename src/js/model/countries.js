@@ -1,8 +1,6 @@
 import axios from 'axios';
 import * as countriesView from '../view/countriesView'
 import * as popupView from '../view/popupView'
-
-import * as SearchView from '../view/searchView'
 import {elements} from '../view/base'
 
 
@@ -38,11 +36,20 @@ export default class Countries {
     searchResults() {
         const getInput = elements.searchForm.value.toLowerCase();
         this.countries = this.data.filter((country) => {
-        return country.name.toLowerCase().includes(getInput);
+            country.name.toLowerCase().includes(getInput) ;
         })
         countriesView.renderResults(this.countries);
 
     };
+
+    getPopup() {
+        const id = window.location.hash.replace('#', '');
+        const getPopup = this.data.filter((country) => {
+            return country.alpha3Code === id;
+        })
+        popupView.renderPopup(getPopup[0])
+    }
+   
 }    
 
 

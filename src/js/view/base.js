@@ -23,11 +23,5 @@ export const elements = {
 
 
 
-export const clearResults = () => {
-     elements.resultsList.innerHTML = ' ';
-     elements.resultsPages.innerHTML = ' '
- };
-
-
 
 

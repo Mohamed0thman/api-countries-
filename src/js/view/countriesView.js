@@ -1,7 +1,6 @@
 import { elements } from './base';
 
 
-
 export const clearResults = () => {
     elements.resultsList.innerHTML = ' ';
     elements.resultsPages.innerHTML = ' '
