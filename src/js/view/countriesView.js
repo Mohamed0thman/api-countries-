@@ -70,8 +70,10 @@ const renderButtom = (page, numResults, resPerPage) => {
     
     
     let button;
+
+    if (numResults <= 8) return;
     if (page === 1 && pages > 1) {
-      button =  creatButton(page, 'next')
+      button =  creatButton(page, 'next');
 
     } else if (page < pages) {
         button =  
@@ -79,7 +81,7 @@ const renderButtom = (page, numResults, resPerPage) => {
          ${creatButton(page, 'next')}   
         `;
     } else if (page === pages && pages > 1) {
-        button =  creatButton(page, 'prev')
+        button =  creatButton(page, 'prev');
     }
 
     
@@ -95,14 +97,20 @@ export const renderResults = (country, page = 1, resPerPage = 8) => {
     const start = (page - 1) * resPerPage;
     const end = page * resPerPage;
     
+    let virtualWidth = "25rem";
+
+    if (country.slice(start, end).length % 3 === 2) {
+      virtualWidth = "50rem";
+    }
+  
+    try {
+      elements.resultsList.removeAttribute(`data-25rem`);
+      elements.resultsList.removeAttribute(`data-50rem`);
+    } catch (e) {}
+    elements.resultsList.setAttribute(`data-${virtualWidth}`, virtualWidth);
+
     country.slice(start, end).forEach(renderCountries);
-    console.log(country);
-    
-    console.log(country.slice(start, end));
-    
-
-
-     renderButtom(page, country.length, resPerPage)
-     console.log(country.length);
+    renderButtom(page, country.length, resPerPage)
+   
      
 }

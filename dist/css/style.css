@@ -247,6 +247,17 @@ result
     margin: 0;
 }
 
+[data-50rem]:after {
+    content: "";
+    width: 50rem;
+  }
+  
+  [data-25rem]:after {
+    content: "";
+    width: 25rem;
+  }
+
+
 
 .results__item {
     background-color: #fff;

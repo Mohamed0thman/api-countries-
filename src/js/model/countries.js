@@ -7,14 +7,12 @@ import {elements} from '../view/base'
 
 
 export default class Countries {
-
-   
-   
-    
+      
     async getCountries() {
         const all = await axios.get(`https://restcountries.eu/rest/v2/all`)
         this.data = all.data
         console.log(this.data);
+        this.countries = this.data
         
         elements.resultsPages.addEventListener('click', e => {
             const btn = e.target.closest('.btn-inline')
@@ -22,29 +20,29 @@ export default class Countries {
             if (btn) {
                 const goToPage = parseInt(btn.dataset.goto, 10);
                 countriesView.clearResults();
-                countriesView.renderResults(this.data, goToPage);
+                countriesView.renderResults(this.countries, goToPage);
         
             }    
         })   
     
     }
+   
+    filterResults() {
+        const option = elements.selected.innerHTML
+        this.countries = this.data.filter((country) => {
+            return country.region.includes(option);
+        })
+        countriesView.renderResults(this.countries);
+    };
 
     searchResults() {
         const getInput = elements.searchForm.value.toLowerCase();
-        countriesView.renderResults(this.data.filter((country) => {
+        this.countries = this.data.filter((country) => {
         return country.name.toLowerCase().includes(getInput);
-        }))
-    };
+        })
+        countriesView.renderResults(this.countries);
 
-
-    filterResults() {
-        const option = elements.selected.innerHTML
-        countriesView.renderResults(this.data.filter((country) => {
-            return country.region === option;
-        }))
-        debugger
     };
-  
 }    
 
 

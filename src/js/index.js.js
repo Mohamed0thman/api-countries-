@@ -83,25 +83,24 @@ elements.optionClose.addEventListener('click', () => {
 
 
 
-const controlSearch = async () => {
+const controlSearch = async () => { 
 
-    if (SearchView.getInput !==  "") {
-        try {
-            countriesView.clearResults();  
-            countriesView.clearNotFound();
-            state.countries = new Countries(); 
-            await state.countries.getCountries();
-            state.countries.searchResults()
-            countriesView.clearBotton();
-        } catch(Error) {
+    if (elements.searchForm.value === '') {
+        controlcountries()
+    } else {
+        if (elements.resultsList.children.length === 0) {
             countriesView.clearNotFound();
             countriesView.clearResults();
             countriesView.clearBotton();
             countriesView.renderNotFound();
-        } 
-    } else {
-        controlcountries() 
-    }
+        } else {
+            countriesView.clearNotFound();
+            countriesView.clearResults();  
+            state.countries = new Countries(); 
+            await state.countries.getCountries();
+            state.countries.searchResults()
+        }    
+    } 
 }
 
 elements.searchForm.addEventListener('keyup', () => {
@@ -110,7 +109,7 @@ elements.searchForm.addEventListener('keyup', () => {
 
 
 
-elements.darkMode.addEventListener('click', e => {
+elements.darkMode.addEventListener('click', () => {
     elements.body.classList.toggle('dark-mode')
     if (elements.moonFont.classList.contains('far')) {
         elements.moonFont.classList.remove('far')  
@@ -120,7 +119,6 @@ elements.darkMode.addEventListener('click', e => {
         elements.moonFont.classList.add('far')  
     }   
 })
-
 
 
 
